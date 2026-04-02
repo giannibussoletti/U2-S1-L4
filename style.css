@@ -9,8 +9,51 @@ article > div {
   width: 150px;
   height: 150px;
   border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 article > div > p {
   margin: 0;
+}
+
+.translate {
+  background-color: orange;
+  transform: translate(100px, -30px);
+  /*(asse x, asse y)  All'interno della parentesi vanno messe
+  le misure di traslazione che l'oggetto dovrà avere 
+  le misure da dare sono le classiche come px, em, rem etc.
+  Accetta elementi sia negativi che positivi. l'asse X in positivo va verso destra, l'asse y va verso il basso.
+   Viceversa entrambe quando il numero è negativo*/
+}
+
+.rotate {
+  background-color: aqua;
+  transform: rotate(85deg);
+  /*turn= giri che equivale ad un giro completo.
+  deg = gradi, dichiarazione dei gradi in cui è ruotato l'oggetto
+  rad = ???.
+  Valori positivi vanno in senso orario, in inegativi in senso anti orario*/
+}
+
+.scale {
+  background-color: greenyellow;
+  transform: scale(1.2, 0.8); /* (x,y) */
+  /*Riduce o aumenta la grandezza dell'oggetto, il broswer comunque
+  vede l'oggetto con le sue dimensioni originali.
+  Utilizza numeri decimali senza misure.
+  > 1 = ingrandisce
+  < 1= rimpicciolisce*/
+}
+
+.skew {
+  background-color: darkorchid;
+  transform: skew(20deg, 30deg); /* (x,y)*/
+  /* misura unica in deg */
+}
+
+.multi {
+  background-color: burlywood;
+  transform: translate(10px, 10px) scale(0.8) rotate(20deg);
 }
