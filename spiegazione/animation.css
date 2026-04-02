@@ -1,0 +1,44 @@
+/* Creazione dell'animazione che va dichiarata prima di dover essere richiamata*/
+@keyframes box-moving /*nome dell'animazione*/ {
+  /*punto di inizio*/
+  0% {
+    transform: translateX(0px);
+  }
+  /*Punto di interemezzo ce ne possono essere più di uno diviso su diverse percentuali tra 0% e 100%*/
+  50% {
+    transform: translateX(100px);
+  }
+  /*punto di fine*/
+  100% {
+    transform: translateX(700px);
+  }
+}
+
+body {
+  margin: 0;
+  line-height: 1;
+  background-color: #979797;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  border: 1px solid;
+}
+
+.box p {
+  margin: 0;
+}
+
+.moving {
+  background-color: aqua;
+  /* animation: nome dell'animazione | durata dell'animazione | curva di accelerazione | ritardo(dealy) | numero delle ripetizioni | "stili conclusivi"(decide se l'elemento dopo finita l'animazione rimane dove è oppure torna al suo punto iniziale) */
+  animation: box-moving 5s ease-in-out 1s 1 backwards;
+}
