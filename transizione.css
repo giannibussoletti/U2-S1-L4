@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  line-height: 1;
+  background-color: #979797;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+article > div {
+  width: 150px;
+  height: 150px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article > div > p {
+  margin: 0;
+}
+
+.long {
+  background-color: lightgreen;
+  /* Sul selettore non hover dell'elemento possiamo applicare
+  una transition per applicare gradualmente il cambiamento su hover */
+
+  /* transition: nome-proprietà | tempo della transizione (secondi s, millisecondi ms) | curva di accelerazione | ritardo(delay)*/
+  transition: width 1s ease-in-out 100ms;
+}
+
+.long:hover {
+  width: 400px; /*HOVER: Quando il mouse passa sopra l'elemento*/
+}
+
+.color {
+  background-color: coral;
+  transition: background-color 1s ease-in-out;
+}
+.color:hover {
+  background-color: rgb(80, 106, 255);
+}
+
+.move {
+  background-color: hotpink;
+  transition: transform 500ms ease-in-out;
+}
+
+.move:hover {
+  transform: translateX(210px);
+}
+
+.crazy {
+  background-color: rgb(105, 245, 255);
+  transition: all 500ms ease-in-out; /* con la proprietà all si riferisce a tutte le proprietà che cambiano*/
+}
+
+.crazy:hover {
+  background-color: forestgreen;
+  transform: translateX(310px) rotate(180deg) scaleY(2);
+}
+
+/* Come posso invece ottenere invece una transizione che sia diversa
+tra l'entrata e l'uscita del mouse */
+/* Per farlo bisogna applicare DUE volte la proprietà transition
+una nella classe normale e una nella classe con hover */
+/* quella applicata all'hover diventa quella di entrata */
+/* quella applicata alla classe normale invece diventa quella in uscita */
+
+.in-out {
+  background-color: blanchedalmond;
+  transition: transform 500ms ease-in-out 100ms; /* Questa diventa la transizione di uscita*/
+}
+
+.in-out:hover {
+  transform: translateX(200px);
+  transition: transform 1s ease-out 100ms; /*questa diventa la transizione in entrata*/
+}
